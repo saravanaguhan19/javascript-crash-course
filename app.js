@@ -50,7 +50,6 @@
 //   ? console.log("give receipt")
 //   : console.log("do not give receipt");
 
-
 //while loop example
 
 // let count1 = 1;
@@ -59,7 +58,6 @@
 //   count1 =count1 + 1;
 // }
 // console.log("hi");
-
 
 //for loop example 1
 
@@ -85,16 +83,16 @@
 //   console.log(str[i]);
 // }
 
-/** create a function that converts celsius to fahrenheit formula 
- * 
+/** create a function that converts celsius to fahrenheit formula
+ *
  * celcius to Fahrenheit formula:
- * 
+ *
  * F= C x 1.8 +32
- * 
+ *
  * example
- * 
+ *
  * convertCelciusToFahrenheit(0)--> 32
- * 
+ *
  */
 
 // function convertCelciusToFahrenheit(celsius){
@@ -124,18 +122,18 @@
 //   }
 // })
 
-//shorter format 
+//shorter format
 
 // let newGrades = grades.filter(element => element !== 'FAIL');
-//using fort loop without filter method 
+//using fort loop without filter method
 // let newGrades =[];
 // for (let i = 0; i< grades.length ; ++i){
 //   // console.log(grades[i]);
-  
+
 //   if (grades[i] !== 'FAIL'){
 //     newGrades.push(grades[i]);
 //   }
-  
+
 // }
 
 // console.log(newGrades);
@@ -144,26 +142,78 @@
 
 /**
  * Turn each element in an array of dollars into cents
- * 
+ *
  * @example
  * [1,5,10,3] => [100,500,1000,300]
  * [0,10,20] => [0,1000,2000]
-  */
-//longer format 
-let dollars = [1,5,10,3];
+ */
+//longer format
+let dollars = [1, 5, 10, 3];
 
 // let cents = dollars.map((element)=> {
 //   return element*100;
 // })
 
-
 //shorter format
 // let cents = dollars.map(element => element*100);
 // console.log(cents);
 
-//using for loop without map method 
-let cents = [];
-for (let i=0; i <dollars.length ; ++i) {
-  cents.push(dollars[i]*100);
+//using for loop without map method
+// let cents = [];
+// for (let i=0; i <dollars.length ; ++i) {
+//   cents.push(dollars[i]*100);
+// }
+// console.log(cents);
+
+//object practice
+
+
+// console.log(user[1].email);
+let user = [
+  {
+    username: "saravana",
+    email: "saravana@frontendsimplified.com",
+    password: "saravana123",
+    subscriptionStatus: " VIP",
+    dicordID: "saravana#001",
+    lessonCompleted: [0, 1, 2],
+  },
+  {
+    username: "guhan",
+    email: "guhan@frontendsimplified.com",
+    password:"guhan123",
+    subscriptionStatus: " VIP",
+    dicordID: "guhan#001",
+    lessonCompleted: [0, 1, 2, 3, 4],
+  },
+];
+
+
+function login(email,password) {
+ 
+  for( let i = 0 ;i<user.length ; i++){
+
+    console.log("this ran");
+    if (user[i].email === email && user[i].password === password){
+      console.log("user can login now");
+      break;
+    }
+  }
 }
-console.log(cents);
+
+login("saravana@frontendsimplified.com","saravana123");
+
+function register(username,email,password,subscriptionStatus,dicordID,lessonCompleted){
+  let users = {
+    username:username ,
+    email:email ,
+    password: password,
+    subscriptionStatus: subscriptionStatus,
+    dicordID: dicordID,
+    lessonCompleted: lessonCompleted,
+  }
+  user.push(users);
+}
+register("bhargavi","bhargavi@frontendsimplified.com","bhargavi123","VIP","bhargavi#001",[0,1,2,3,4]);
+
+console.log(user[2]);
